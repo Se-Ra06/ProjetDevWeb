@@ -9,7 +9,8 @@
     border-radius: 50%;
     cursor: pointer;
     display: none;
-    transition: opacity 0.3s;
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 1000;
 }
 
 #scrollBtn img {
@@ -19,4 +20,30 @@
 
 #scrollBtn:hover {
     background-color: #00bfa5;
+    transform: scale(1.1);
+}
+
+/* Responsive adjustments for small screens */
+@media screen and (max-width: 768px) {
+    #scrollBtn {
+        bottom: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    #scrollBtn img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Additional adjustments for very small screens */
+@media screen and (max-width: 480px) {
+    #scrollBtn {
+        bottom: 10px;
+        right: 10px;
+        width: 35px;
+        height: 35px;
+    }
 }
