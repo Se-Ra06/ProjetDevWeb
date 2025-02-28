@@ -1,16 +1,16 @@
 <?php 
+session_start();
 require 'db.php';
-session_start();
-
-<?php
-session_start();
 require 'auth.php';
 
+// Make sure no output has happened before this point
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $password = $_POST["password"];
 
     $user = loginUser($pdo, $email, $password);
+
+    header('Content-Type: application/json'); // Set the content type to JSON
 
     if ($user) {
         // Store user data in session
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Send success response with redirect
         echo json_encode([
             "success" => true,
-            "redirect" => ($user['user_type'] === 'admin') ? 'View/admin.html' : 
+            "redirect" => ($user['user_type'] === 'admin') ? '../View/admin.html' : 
                          (($user['user_type'] === 'student') ? 'student.php' : 'pilot.php'),
             "message" => "Login successful"
         ]);
@@ -32,5 +32,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ]);
         exit;
     }
+}
+else {
+    header('Content-Type: application/json');
+    echo json_encode(["success" => false, "message" => "Invalid request method"]);
+    exit;
 }
 ?>

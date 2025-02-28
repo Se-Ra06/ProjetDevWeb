@@ -1,7 +1,7 @@
 <?php 
 $host = 'localhost';
 $dbname = 'siteweb';
-$password = 'rami2004ekko';
+$password = 'rami2004';
 $user = 'root'; 
 
 try { 
