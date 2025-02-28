@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .dashboard {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 3px;
+        }
+        .success {
+            background-color: #dff0d8;
+            color: #3c763d;
+        }
+        .error {
+            background-color: #f2dede;
+            color: #a94442;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <h1>Admin Dashboard</h1>
+        <div class="status success">
+            <h3>Connection Status:</h3>
+            <p>✅ Successfully connected to admin panel</p>
+        </div>
+        <div>
+            <h3>Admin Details:</h3>
+            <p>Username: <span id="adminUsername">admin</span></p>
+            <p>Last Login: <span id="lastLogin">2024-01-24 10:30:00</span></p>
+        </div>
+        <button onclick="alert('Logout successful')">Logout</button>
+    </div>
+</body>
+</html>

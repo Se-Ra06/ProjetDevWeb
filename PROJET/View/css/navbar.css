@@ -1,0 +1,112 @@
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px 20px;
+    border-radius: 30px;
+    width: 90%;
+    margin: 10px auto; 
+    position:relative;
+}
+
+
+.input {
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: none;
+    background: rgba(25, 30, 48, 0.786);
+    color: white;
+    border: 2px solid #00594a;
+    width: 150px;
+    outline: none; 
+    box-shadow: 0px 0px 20px -18px;
+}
+
+.input:hover {
+    border: 2px solid #00a58a;
+    box-shadow: 0px 0px 20px -17px;
+}
+
+.input:active {
+    transform: scale(0.95);
+}
+
+.input:focus {
+    border: 2px solid #00e0bc;
+}
+
+.navbar {
+    display:flex;
+    list-style: none;
+    gap: 20px;
+    position:absolute;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+.navbar li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    margin: 0 10px;
+    position:relative;
+    z-index: 1;
+}
+
+.navbar li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #00e0bc;
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover, .navbar a.active {
+    color:#00e0bc;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        padding: 10px;
+        padding-bottom: 20px;
+        text-align: center;
+        width: 90%;
+    }
+
+    .search {
+        margin-bottom: 10px;
+    }
+
+    .navbar {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .navbar li {
+        display: block;
+    }
+}
